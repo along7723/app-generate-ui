@@ -1,0 +1,668 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+aside {
+  background: #eef1f6;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+#app .fa {
+  text-align: center;
+  width: 18px;
+}
+
+#app .el-inline-form .el-form-item__content {
+  width: calc(100% - 132px)
+}
+
+#app .el-inline-form .el-form-item {
+  width: 100%
+}
+
+#app .senior-query-form .el-form-item__label {
+  width: 100px
+}
+
+#app .senior-query-form .el-input {
+  width: calc(100% - 100px)
+}
+
+#app .senior-query-form .el-select {
+  width: calc(100% - 100px);
+}
+
+#app .senior-query-form .el-select .el-input {
+  width: 100%;
+}
+
+#app .column-button.el-button {
+  margin: 0px;
+  margin-right: 6px;
+}
+
+#app .column-button.el-button--medium {
+  padding: 6px 8px;
+  width: 32px !important;
+}
+
+#app .el-drawer.rtl {
+  overflow-y: scroll;
+}
+
+#app .table-top .el-button--medium {
+  height: 35.5px;
+}
+
+.simple-pager {
+  color: #999;
+}
+
+#app .table-top .el-radio-group {
+  height: 35.5px;
+  margin: 0px 10px;
+}
+
+/*样式与safira浏览器冲突*/
+//#app td {
+//  width: auto; /*保证文字不会被半汉字截断,显示10个文字*/
+//  overflow: hidden; /*超出长度的文字隐藏*/
+//}
+
+body .el-table th.gutter {
+  display: table-cell !important;
+}
+
+//.el-table tr:hover > td{
+//  background-color: rgba(255, 255, 0, 0.29) !important;
+//}
+
+/*鼠标移入某行时的背景色-兼容固定列*/
+.el-table__body .el-table__row.hover-row td {
+  background-color: #fff9dc !important;
+}
+
+
+#app .el-table .sortable-chosen td {
+  background-color: #1482f0 !important;
+  color: white;
+}
+
+#app .el-table .cell.el-tooltip {
+  min-width: 40px;
+}
+
+/*****调整按钮对不齐的bug******/
+#app .table-top .el-radio-group {
+  height: 36.5px;
+  font-family: "Courier New";
+}
+
+#app .table-top .el-button-group {
+  height: 36.8px;
+  font-family: "Courier New";
+}
+
+/*****表头样式修改****/
+#app .el-table th > .cell {
+  padding: 0px 5px;
+}
+
+#app .el-table td > .cell {
+  padding: 0px 5px;
+}
+
+#app .table-header-tips {
+  border: 1px dashed #e3e3e3;
+  min-width: 28px;
+}
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 6px rgba(125, 125, 125, .1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+//#app .el-drawer{
+//  background-color: rgba(255,255,255,0.88);
+//}
+
+/******详情页字段名样式******/
+#app .el-form-item__label {
+  color: #999;
+}
+
+
+/******树菜单样式******/
+.el-tree .el-tree-node {
+  line-height: 2.8;
+}
+
+.el-tree .el-tree-node__content {
+  height: 42px;
+  font-size: 14px;
+}
+
+.el-tree i {
+  display: inline-block;
+  width: 14px;
+  margin-right: 5px;
+}
+
+#app .tableHeaderDialog .el-checkbox {
+  width: 120px;
+  height: 30px;
+}
+
+/******table 表头 拖拽样式******/
+/*
+#app .table-header {
+  cursor: move;
+}
+*/
+
+.selection-tips {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  line-height: 30px;
+  background-color: #F4F4F4;
+  //color: #606266;
+  color: #13ce66;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+/****自定义分隔线***/
+.sys-divider {
+  color: #bbb;
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #efefef;
+  padding-left: 10px;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+.box-card .el-card__body {
+  padding-bottom: 0px;
+}
+
+/****表头排序图标****/
+
+.el-table .table-header {
+  //width: 100%; /*保证文字不会被半汉字截断,显示10个文字*/
+  //overflow: hidden; /*超出长度的文字隐藏*/
+  //text-overflow: ellipsis; /*文字隐藏以后添加省略号*/
+  //white-space: nowrap; /*强制不换行*/
+  display: inline-block;
+}
+
+.el-table .caret-wrapper {
+  height: 17px;
+}
+
+.el-table .caret-wrapper .sort-caret.ascending {
+  top: -4px;
+}
+
+.el-table .caret-wrapper .sort-caret.descending {
+  bottom: -2px;
+}
+
+/*****时间范围选择框样式*****/
+.el-range-editor.el-input__inner,
+.el-date-editor--daterange.el-input,
+.el-date-editor--daterange.el-input__inner,
+.el-date-editor--timerange.el-input,
+.el-date-editor--timerange.el-input__inner {
+  width: calc(100% - 100px);
+  max-width: 345px;
+}
+
+/*******子页面样式*********/
+.sub-page {
+  margin: 20px 0px;
+}
+
+.sub-page .sub-page-header {
+  font-weight: bold;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+  box-shadow: 0px 4px 2px rgba(136, 150, 179, 0.1);
+}
+
+.sub-page .sub-page-header .title {
+  background-color: #999999;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  display: inline-block;
+  padding: 6px 15px;
+}
+
+.sub-page .sub-page-header .title-memo {
+  border: none;
+  color: #999;
+  font-size: 12px;
+  display: inline-block;
+  padding: 6px;
+}
+
+/********/
+.app-form-inline .form-header {
+  height: 40px;
+}
+
+.app-form-inline .form-header .form-title {
+  line-height: 40px;
+  margin-left: 20px;
+}
+
+/*富文本样式*/
+/*.ql-editor a {
+  text-decoration: underline;
+  color: #06c;
+}*/
+/*解决图标错位*/
+.ql-editor-class {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.42;
+  height: 100%;
+  outline: none;
+  padding: 0 !important;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/*内容样式调整*/
+.ql-snow .ql-editor {
+  line-height: 2;
+}
+
+/*汉化*/
+.ql-snow .ql-picker.ql-size .ql-picker-label::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+  content: "14px" !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="small"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="small"]::before {
+  content: "10px" !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="large"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="large"]::before {
+  content: "18px" !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="huge"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="huge"]::before {
+  content: "32px" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item::before {
+  content: "文本" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {
+  content: "标题1" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
+  content: "标题2" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"]::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
+  content: "标题3" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="4"]::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"]::before {
+  content: "标题4" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="5"]::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
+  content: "标题5" !important;
+}
+
+.ql-snow .ql-picker.ql-header .ql-picker-label[data-value="6"]::before,
+.ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"]::before {
+  content: "标题6" !important;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item::before {
+  content: "标准字体" !important;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="serif"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="serif"]::before {
+  content: "衬线字体" !important;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value="monospace"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="monospace"]::before {
+  content: "等宽字体" !important;
+}
+
+.ql-snow .ql-tooltip[data-mode=link]::before {
+  content: "链接地址" !important;
+}
+
+.ql-snow .ql-tooltip::before {
+  content: "链接地址" !important;
+}
+
+.ql-snow .ql-tooltip a.ql-action::after {
+  content: "编辑" !important;
+}
+
+.ql-snow .ql-tooltip a.ql-remove::before {
+  content: "清除" !important;
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+  content: "保存" !important;
+}
+
+/*el-imag 图片预览样式修改*/
+.el-image-viewer__mask {
+  opacity: 0.8 !important;
+}
+
+.el-image-viewer__close {
+  color: white;
+}
+
+/**消息弹窗样式重写**/
+.danger-message {
+  background-color: red;
+  border: none;
+}
+
+.danger-message .el-notification__title {
+  color: white;
+}
+
+.danger-message .el-notification__content {
+  color: white;
+}
+
+.danger-message .el-notification__closeBtn {
+  color: white;
+}
+
+.waring-message {
+  background-color: orange;
+  border: none;
+}
+
+.waring-message .el-notification__title {
+  color: white;
+}
+
+.waring-message .el-notification__content {
+  color: white;
+}
+
+.waring-message .el-notification__closeBtn {
+  color: white;
+}
+
+.success-message {
+  background-color: green;
+  border: none;
+}
+
+.success-message .el-notification__title {
+  color: white;
+}
+
+.success-message .el-notification__content {
+  color: white;
+}
+
+.success-message .el-notification__closeBtn {
+  color: white;
+}
+
+.info-message {
+  background-color: blue;
+  border: none;
+}
+
+.info-message .el-notification__title {
+  color: white;
+}
+
+.info-message .el-notification__content {
+  color: white;
+}
+
+.info-message .el-notification__closeBtn {
+  color: white;
+}
+
+/**解决表单错行**/
+.el-form-item--medium {
+  height: 36px !important;
+}
+
+.el-table__body {
+  // 使表格兼容safari，不错位
+  width: 100%;
+  table-layout: fixed !important;
+}
+
+.error-info {
+  text-align: center;
+  line-height: 100px;
+  color: red;
+}
